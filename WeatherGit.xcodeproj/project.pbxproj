@@ -10,6 +10,7 @@
 		BDCDC1EDAADE2B16DCF25D6E /* libPods-WeatherGit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5E216C8D714F9B33B5E073 /* libPods-WeatherGit.a */; };
 		F56B911A2944CC5A00966B94 /* APIkeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56B91192944CC5A00966B94 /* APIkeys.swift */; };
 		F56B911C2946587B00966B94 /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56B911B2946587B00966B94 /* LocationDetailViewController.swift */; };
+		F56B911E2946C46D00966B94 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56B911D2946C46D00966B94 /* PageViewController.swift */; };
 		F5BF29DF2943706300DDFDBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BF29DE2943706300DDFDBD /* AppDelegate.swift */; };
 		F5BF29E12943706300DDFDBD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BF29E02943706300DDFDBD /* SceneDelegate.swift */; };
 		F5BF29E32943706300DDFDBD /* LocationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BF29E22943706300DDFDBD /* LocationListViewController.swift */; };
@@ -25,6 +26,7 @@
 		DA5E216C8D714F9B33B5E073 /* libPods-WeatherGit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeatherGit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F56B91192944CC5A00966B94 /* APIkeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIkeys.swift; sourceTree = "<group>"; };
 		F56B911B2946587B00966B94 /* LocationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
+		F56B911D2946C46D00966B94 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		F5BF29DB2943706300DDFDBD /* WeatherGit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherGit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5BF29DE2943706300DDFDBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5BF29E02943706300DDFDBD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				F5BF29DE2943706300DDFDBD /* AppDelegate.swift */,
 				F5BF29E02943706300DDFDBD /* SceneDelegate.swift */,
 				F5BF29F4294370AD00DDFDBD /* WeatherLocation.swift */,
+				F56B911D2946C46D00966B94 /* PageViewController.swift */,
 				F56B911B2946587B00966B94 /* LocationDetailViewController.swift */,
 				F5BF29E22943706300DDFDBD /* LocationListViewController.swift */,
 				F5BF29E42943706300DDFDBD /* Main.storyboard */,
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5BF29E32943706300DDFDBD /* LocationListViewController.swift in Sources */,
+				F56B911E2946C46D00966B94 /* PageViewController.swift in Sources */,
 				F5BF29F5294370AD00DDFDBD /* WeatherLocation.swift in Sources */,
 				F56B911A2944CC5A00966B94 /* APIkeys.swift in Sources */,
 				F5BF29DF2943706300DDFDBD /* AppDelegate.swift in Sources */,
