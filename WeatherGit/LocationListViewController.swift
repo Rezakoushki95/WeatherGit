@@ -15,11 +15,17 @@ class LocationListViewController: UIViewController {
 	@IBOutlet weak var addBarButton: UIBarButtonItem!
 	
 	var weatherLocations: [WeatherLocation] = []
+	var selectedLocationIndex = 0
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		tableView.delegate = self
 		tableView.dataSource = self
+		
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		selectedLocationIndex = tableView.indexPathForSelectedRow!.row
 	}
 	
 	@IBAction func editBarButtonPressed(_ sender: UIBarButtonItem) {
