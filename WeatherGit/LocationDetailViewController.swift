@@ -34,8 +34,7 @@ class LocationDetailViewController: UIViewController {
 		temperatureLabel.text = "--º"
 		summaryLabel.text = ""
 		
-		pageControl.numberOfPages = pageViewController.weatherLocations.count
-		pageControl.currentPage = locationIndex
+		weatherLocation.getData()
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
