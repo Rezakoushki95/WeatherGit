@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BDCDC1EDAADE2B16DCF25D6E /* libPods-WeatherGit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5E216C8D714F9B33B5E073 /* libPods-WeatherGit.a */; };
+		F508B0532947ABBB009A74AD /* WeatherDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F508B0522947ABBB009A74AD /* WeatherDetail.swift */; };
 		F56B911A2944CC5A00966B94 /* APIkeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56B91192944CC5A00966B94 /* APIkeys.swift */; };
 		F56B911C2946587B00966B94 /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56B911B2946587B00966B94 /* LocationDetailViewController.swift */; };
 		F56B911E2946C46D00966B94 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56B911D2946C46D00966B94 /* PageViewController.swift */; };
@@ -24,6 +25,7 @@
 		0ECC93D0B57FFB522F19E261 /* Pods-WeatherGit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherGit.debug.xcconfig"; path = "Target Support Files/Pods-WeatherGit/Pods-WeatherGit.debug.xcconfig"; sourceTree = "<group>"; };
 		A9DDF0E80B2BAA7247FAD7B1 /* Pods-WeatherGit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherGit.release.xcconfig"; path = "Target Support Files/Pods-WeatherGit/Pods-WeatherGit.release.xcconfig"; sourceTree = "<group>"; };
 		DA5E216C8D714F9B33B5E073 /* libPods-WeatherGit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeatherGit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F508B0522947ABBB009A74AD /* WeatherDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetail.swift; sourceTree = "<group>"; };
 		F56B91192944CC5A00966B94 /* APIkeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIkeys.swift; sourceTree = "<group>"; };
 		F56B911B2946587B00966B94 /* LocationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
 		F56B911D2946C46D00966B94 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				F5BF29DE2943706300DDFDBD /* AppDelegate.swift */,
 				F5BF29E02943706300DDFDBD /* SceneDelegate.swift */,
 				F5BF29F4294370AD00DDFDBD /* WeatherLocation.swift */,
+				F508B0522947ABBB009A74AD /* WeatherDetail.swift */,
 				F56B911D2946C46D00966B94 /* PageViewController.swift */,
 				F56B911B2946587B00966B94 /* LocationDetailViewController.swift */,
 				F5BF29E22943706300DDFDBD /* LocationListViewController.swift */,
@@ -219,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5BF29E32943706300DDFDBD /* LocationListViewController.swift in Sources */,
+				F508B0532947ABBB009A74AD /* WeatherDetail.swift in Sources */,
 				F56B911E2946C46D00966B94 /* PageViewController.swift in Sources */,
 				F5BF29F5294370AD00DDFDBD /* WeatherLocation.swift in Sources */,
 				F56B911A2944CC5A00966B94 /* APIkeys.swift in Sources */,
