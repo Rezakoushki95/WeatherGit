@@ -32,7 +32,7 @@ class WeatherDetail: WeatherLocation {
 	var summary = ""
 	var dailyIcon = ""
 	
-	private func fileNameForIcon(icon: String) -> String {
+	func fileNameForIcon(icon: String) -> String {
 		switch icon {
 		case "01d", "01n":
 			return "sun.max.fill"
