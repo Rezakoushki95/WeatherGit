@@ -5,13 +5,30 @@
 //  Created by Reza Koushki on 12/12/2022.
 //
 
-import Foundation
+import UIKit
+
+private let dateFormatter: DateFormatter = {
+	let dateFormatter = DateFormatter()
+	dateFormatter.dateFormat = "EEEE"
+	return dateFormatter
+}()
+
+
+
+struct DailyWeather {
+	var dailyIcon: String
+	var dailyWeekday: String
+	var dailySummary: String
+	var dailyHigh: Int
+	var dailyLow: Int
+}
 
 class WeatherDetail: WeatherLocation {
 	
 	private struct Result: Codable {
 		var timezone: String
 		var current: Current
+		var daily: [Daily]
 	}
 	
 	private struct Current: Codable {
@@ -25,12 +42,24 @@ class WeatherDetail: WeatherLocation {
 		var icon: String
 	}
 	
+	private struct Daily: Codable {
+		var dt: TimeInterval
+		var temp: Temp
+		var weather: [Weather]
+	}
+	
+	private struct Temp: Codable {
+		var min: Double
+		var max: Double
+	}
+	
 	
 	var timezone = ""
 	var currentTime = 0.0
 	var temperature = 0
 	var summary = ""
-	var dailyIcon = ""
+	var dayIcon = ""
+	var dailyWeatherData: [DailyWeather] = []
 	
 	func fileNameForIcon(icon: String) -> String {
 		switch icon {
@@ -84,8 +113,25 @@ class WeatherDetail: WeatherLocation {
 				self.currentTime = result.current.dt
 				self.temperature = Int(result.current.temp)
 				self.summary = result.current.weather[0].description
-				self.dailyIcon = result.current.weather[0].icon
-			
+				self.dayIcon = result.current.weather[0].icon
+				
+				for index in 0..<result.daily.count {
+					let weekdayDate = Date(timeIntervalSince1970: result.daily[index].dt)
+					dateFormatter.timeZone = TimeZone(identifier: result.timezone)
+					let dailyWeekDay = dateFormatter.string(from: weekdayDate)
+					let dailyIcon = self.fileNameForIcon(icon: result.daily[index].weather[0].icon)
+					let dailySummary = result.daily[index].weather[0].description
+					let dailyHigh = Int(result.daily[index].temp.max.rounded())
+					let dailyLow = Int(result.daily[index].temp.min.rounded())
+					
+					let dailyWeather = DailyWeather(dailyIcon: dailyIcon, dailyWeekday: dailyWeekDay, dailySummary: dailySummary, dailyHigh: dailyHigh, dailyLow: dailyLow)
+					
+					self.dailyWeatherData.append(dailyWeather)
+					
+					print("Day: \(dailyWeekDay), High: \(dailyHigh), Low: \(dailyLow)")
+
+					
+				}
 
 			} catch {
 				print("JSON ERROR: \(error.localizedDescription)")
