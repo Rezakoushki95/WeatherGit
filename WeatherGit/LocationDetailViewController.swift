@@ -17,7 +17,7 @@ private let dateFormatter: DateFormatter = {
 }()
 
 class LocationDetailViewController: UIViewController {
-
+	
 	@IBOutlet weak var dateLabel: UILabel!
 	@IBOutlet weak var placeLabel: UILabel!
 	@IBOutlet weak var temperatureLabel: UILabel!
@@ -29,7 +29,7 @@ class LocationDetailViewController: UIViewController {
 	var locationIndex = 0
 	
 	override func viewDidLoad() {
-        super.viewDidLoad()
+		super.viewDidLoad()
 		updateUI()
 	}
 	
@@ -38,9 +38,7 @@ class LocationDetailViewController: UIViewController {
 		
 		let weatherLocation = pageViewController.weatherLocations[locationIndex]
 		weatherDetail = WeatherDetail(name: weatherLocation.name, latitude: weatherLocation.latitude, longitude: weatherLocation.longitude)
-		
-
-		
+	
 		weatherDetail.getData {
 			DispatchQueue.main.async {
 				dateFormatter.timeZone = TimeZone(identifier: self.weatherDetail.timezone)
@@ -50,6 +48,8 @@ class LocationDetailViewController: UIViewController {
 				self.temperatureLabel.text = "\(self.weatherDetail.temperature)º"
 				self.summaryLabel.text = self.weatherDetail.summary
 				self.imageView.image = UIImage(systemName: self.weatherDetail.fileNameForIcon(icon: self.weatherDetail.dayIcon))
+				self.pageControl.numberOfPages = pageViewController.weatherLocations.count
+				self.pageControl.currentPage = self.locationIndex
 			}
 		}
 	}
@@ -69,7 +69,7 @@ class LocationDetailViewController: UIViewController {
 		pageViewController.weatherLocations = source.weatherLocations
 		
 		pageViewController.setViewControllers([pageViewController.createLocationDetailViewController(forPage: locationIndex)], direction: .forward, animated: false, completion: nil)
-
+		
 	}
 	
 	@IBAction func pageControlTapped(_ sender: UIPageControl) {
