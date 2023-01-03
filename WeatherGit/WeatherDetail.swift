@@ -13,6 +13,12 @@ private let dateFormatter: DateFormatter = {
 	return dateFormatter
 }()
 
+private let hourFormatter: DateFormatter = {
+	let hourFormatter = DateFormatter()
+	hourFormatter.dateFormat = "ha"
+	return hourFormatter
+}()
+
 
 
 struct DailyWeather {
@@ -23,12 +29,19 @@ struct DailyWeather {
 	var dailyLow: Int
 }
 
+struct HourlyWeather {
+	var hour: String
+	var hourlyTemperature: Int
+	var hourlyIcon: String
+}
+
 class WeatherDetail: WeatherLocation {
 	
 	private struct Result: Codable {
 		var timezone: String
 		var current: Current
 		var daily: [Daily]
+		var hourly: [Hourly]
 	}
 	
 	private struct Current: Codable {
@@ -48,6 +61,12 @@ class WeatherDetail: WeatherLocation {
 		var weather: [Weather]
 	}
 	
+	private struct Hourly: Codable {
+		var dt: TimeInterval
+		var temp: Double
+		var weather: [Weather]
+	}
+	
 	private struct Temp: Codable {
 		var min: Double
 		var max: Double
@@ -60,6 +79,8 @@ class WeatherDetail: WeatherLocation {
 	var summary = ""
 	var dayIcon = ""
 	var dailyWeatherData: [DailyWeather] = []
+	var hourlyWeatherData: [HourlyWeather] = []
+	
 	
 	func fileNameForIcon(icon: String) -> String {
 		switch icon {
@@ -126,14 +147,28 @@ class WeatherDetail: WeatherLocation {
 					
 					let dailyWeather = DailyWeather(dailyIcon: dailyIcon, dailyWeekday: dailyWeekDay, dailySummary: dailySummary, dailyHigh: dailyHigh, dailyLow: dailyLow)
 					
-					
 					self.dailyWeatherData.append(dailyWeather)
-					
 					print("Day: \(dailyWeekDay), High: \(dailyHigh), Low: \(dailyLow)")
-
-					
 				}
-
+				// get no more than 24 hour of hourly data
+				let lastHour = min(24, result.hourly.count)
+				
+				if lastHour > 0 {
+					for index in 1...lastHour {
+						let hourlyDate = Date(timeIntervalSince1970: result.hourly[index].dt)
+						hourFormatter.timeZone = TimeZone(identifier: result.timezone)
+						let hour = hourFormatter.string(from: hourlyDate)
+						let hourlyTemperature = Int(result.hourly[index].temp.rounded())
+						let hourlyIcon = self.fileNameForIcon(icon: result.hourly[index].weather[0].icon)
+						
+						let hourlyWeather = HourlyWeather(hour: hour, hourlyTemperature: hourlyTemperature, hourlyIcon: hourlyIcon)
+				
+						self.hourlyWeatherData.append(hourlyWeather)
+						
+						print("hour: \(hour), temp: \(hourlyTemperature), icon: \(hourlyIcon)")
+					}
+				}
+			
 			} catch {
 				print("JSON ERROR: \(error.localizedDescription)")
 			}
