@@ -19,6 +19,7 @@
 		F5BF29E82943706400DDFDBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5BF29E72943706400DDFDBD /* Assets.xcassets */; };
 		F5BF29EB2943706400DDFDBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5BF29E92943706400DDFDBD /* LaunchScreen.storyboard */; };
 		F5BF29F5294370AD00DDFDBD /* WeatherLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BF29F4294370AD00DDFDBD /* WeatherLocation.swift */; };
+		F5D14CB3296380E2007FC7E4 /* DailyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D14CB2296380E2007FC7E4 /* DailyTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		F5BF29EA2943706400DDFDBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5BF29EC2943706400DDFDBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5BF29F4294370AD00DDFDBD /* WeatherLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherLocation.swift; sourceTree = "<group>"; };
+		F5D14CB2296380E2007FC7E4 /* DailyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				F56B911D2946C46D00966B94 /* PageViewController.swift */,
 				F56B911B2946587B00966B94 /* LocationDetailViewController.swift */,
 				F5BF29E22943706300DDFDBD /* LocationListViewController.swift */,
+				F5D14CB2296380E2007FC7E4 /* DailyTableViewCell.swift */,
 				F5BF29E42943706300DDFDBD /* Main.storyboard */,
 				F5BF29E72943706400DDFDBD /* Assets.xcassets */,
 				F5BF29E92943706400DDFDBD /* LaunchScreen.storyboard */,
@@ -221,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5D14CB3296380E2007FC7E4 /* DailyTableViewCell.swift in Sources */,
 				F5BF29E32943706300DDFDBD /* LocationListViewController.swift in Sources */,
 				F508B0532947ABBB009A74AD /* WeatherDetail.swift in Sources */,
 				F56B911E2946C46D00966B94 /* PageViewController.swift in Sources */,

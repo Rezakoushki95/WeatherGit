@@ -126,6 +126,7 @@ class WeatherDetail: WeatherLocation {
 					
 					let dailyWeather = DailyWeather(dailyIcon: dailyIcon, dailyWeekday: dailyWeekDay, dailySummary: dailySummary, dailyHigh: dailyHigh, dailyLow: dailyLow)
 					
+					
 					self.dailyWeatherData.append(dailyWeather)
 					
 					print("Day: \(dailyWeekDay), High: \(dailyHigh), Low: \(dailyLow)")
