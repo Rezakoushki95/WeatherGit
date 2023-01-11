@@ -83,10 +83,11 @@ class LocationDetailViewController: UIViewController {
 		}
 	}
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		let destination = segue.destination as! LocationListViewController
-		let pageViewController = UIApplication.shared.windows.first!.rootViewController as! PageViewController
-		
-		destination.weatherLocations = pageViewController.weatherLocations
+		if segue.identifier == "LocationListSegue" {
+			let destination = segue.destination as! LocationListViewController
+			let pageViewController = UIApplication.shared.windows.first!.rootViewController as! PageViewController
+			destination.weatherLocations = pageViewController.weatherLocations
+		}
 	}
 	
 	@IBAction func undwindFromLocationListViewController(segue: UIStoryboardSegue) {
@@ -178,7 +179,7 @@ extension LocationDetailViewController: CLLocationManagerDelegate {
 			return
 		}
 		
-		let settingsAction = UIAlertAction(title: "Settings", style: .default) { _ in
+		let settingsAction = UIAlertAction(title: title, style: .default) { _ in
 			UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
 		}
 		

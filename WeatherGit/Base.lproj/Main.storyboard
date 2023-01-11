@@ -31,7 +31,11 @@
                                     <constraint firstAttribute="height" constant="44" id="iE5-dG-9HU"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="About" id="CPH-Pp-slX"/>
+                                    <barButtonItem title="About" id="CPH-Pp-slX">
+                                        <connections>
+                                            <segue destination="UWd-eT-IqN" kind="presentation" id="Yb3-qQ-F4g"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="O1Z-D8-B46"/>
                                     <barButtonItem style="plain" id="48k-25-ML0">
                                         <pageControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="WHL-SX-HeE">
@@ -47,7 +51,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="esR-0z-IQ7"/>
                                     <barButtonItem image="list.bullet" catalog="system" id="obb-uJ-FGG">
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="bc9-wZ-6hb"/>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" identifier="LocationListSegue" modalPresentationStyle="fullScreen" id="bc9-wZ-6hb"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -233,6 +237,79 @@
             </objects>
             <point key="canvasLocation" x="-612" y="124.58770614692655"/>
         </scene>
+        <!--About View Controller-->
+        <scene sceneID="9cx-F8-5D5">
+            <objects>
+                <viewController id="UWd-eT-IqN" customClass="AboutViewController" customModule="WeatherGit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hkv-nM-qaq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d9H-5d-LO9">
+                                <rect key="frame" x="0.0" y="603" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Xle-BS-6SJ"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Done" id="vrK-oo-RNR">
+                                        <connections>
+                                            <action selector="doneButtonPressed:" destination="UWd-eT-IqN" id="1Fo-yL-wJK"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ne-KE-T2V">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WeatherGift" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEf-36-Wi1">
+                                        <rect key="frame" x="53" y="8" width="268" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="64"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rain" translatesAutoresizingMaskIntoConstraints="NO" id="lK8-Hb-aqa">
+                                        <rect key="frame" x="8" y="104" width="359" height="210"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YiR-gI-ElC">
+                                        <rect key="frame" x="8" y="322" width="359" height="67"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                        <string key="text">Thanks to Prof. Gallaugher!
+- Reza</string>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="powered_by_openweather" translatesAutoresizingMaskIntoConstraints="NO" id="bKR-WH-X47">
+                                        <rect key="frame" x="8" y="397" width="151" height="198"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="powered_by_google_on_white" translatesAutoresizingMaskIntoConstraints="NO" id="bFd-Zr-VI9">
+                                        <rect key="frame" x="216" y="397" width="151" height="198"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4c1-ft-eGg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4c1-ft-eGg" firstAttribute="trailing" secondItem="1ne-KE-T2V" secondAttribute="trailing" id="LBh-Td-WU9"/>
+                            <constraint firstItem="d9H-5d-LO9" firstAttribute="bottom" secondItem="4c1-ft-eGg" secondAttribute="bottom" id="Tq7-pT-l19"/>
+                            <constraint firstItem="d9H-5d-LO9" firstAttribute="leading" secondItem="4c1-ft-eGg" secondAttribute="leading" id="VxO-cU-qwz"/>
+                            <constraint firstItem="1ne-KE-T2V" firstAttribute="top" secondItem="4c1-ft-eGg" secondAttribute="top" id="W0d-8K-kFC"/>
+                            <constraint firstItem="d9H-5d-LO9" firstAttribute="trailing" secondItem="4c1-ft-eGg" secondAttribute="trailing" id="iYg-w1-5yV"/>
+                            <constraint firstItem="1ne-KE-T2V" firstAttribute="leading" secondItem="4c1-ft-eGg" secondAttribute="leading" id="n5C-I2-mgG"/>
+                            <constraint firstItem="d9H-5d-LO9" firstAttribute="top" secondItem="1ne-KE-T2V" secondAttribute="bottom" id="sIC-9d-hpF"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YYi-1S-5ky" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-612" y="847"/>
+        </scene>
         <!--Location List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -315,6 +392,9 @@
         <image name="cloud" catalog="system" width="128" height="88"/>
         <image name="cloud.rain" catalog="system" width="125" height="128"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
+        <image name="powered_by_google_on_white" width="144" height="18"/>
+        <image name="powered_by_openweather" width="468" height="228"/>
+        <image name="rain" width="1517" height="2022"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
