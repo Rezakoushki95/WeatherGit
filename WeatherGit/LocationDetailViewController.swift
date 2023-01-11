@@ -163,12 +163,30 @@ extension LocationDetailViewController: CLLocationManagerDelegate {
 		case .restricted:
 			self.oneButtonAlert(title: "Location service denied", message: "It may be that parental controls are restricting location use in this app.")
 		case .denied:
-			break
+			showAlertToPrivacySetting(title: "User has not authorized location services", message: "Select 'Settings' below to enable device settings and enable location services for this app.")
 		case .authorizedAlways, .authorizedWhenInUse:
 			locationManager.requestLocation()
 		@unknown default:
 			print("Developer Alert: Uknown case of status in handleAuthenticationStatus: \(status)")
 		}
+	}
+	
+	func showAlertToPrivacySetting(title: String, message: String) {
+		let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+		guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else {
+			print("ERROR: Something went wrong with UIApplication.openSettingsURLString")
+			return
+		}
+		
+		let settingsAction = UIAlertAction(title: "Settings", style: .default) { _ in
+			UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+		}
+		
+		let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+		
+		alertController.addAction(settingsAction)
+		alertController.addAction(cancelAction)
+		present(alertController, animated: true, completion: nil)
 	}
 	
 	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
