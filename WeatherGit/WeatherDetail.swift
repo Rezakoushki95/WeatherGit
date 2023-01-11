@@ -148,7 +148,6 @@ class WeatherDetail: WeatherLocation {
 					let dailyWeather = DailyWeather(dailyIcon: dailyIcon, dailyWeekday: dailyWeekDay, dailySummary: dailySummary, dailyHigh: dailyHigh, dailyLow: dailyLow)
 					
 					self.dailyWeatherData.append(dailyWeather)
-					print("Day: \(dailyWeekDay), High: \(dailyHigh), Low: \(dailyLow)")
 				}
 				// get no more than 24 hour of hourly data
 				let lastHour = min(24, result.hourly.count)
@@ -164,8 +163,6 @@ class WeatherDetail: WeatherLocation {
 						let hourlyWeather = HourlyWeather(hour: hour, hourlyTemperature: hourlyTemperature, hourlyIcon: hourlyIcon)
 				
 						self.hourlyWeatherData.append(hourlyWeather)
-						
-						print("hour: \(hour), temp: \(hourlyTemperature), icon: \(hourlyIcon)")
 					}
 				}
 			

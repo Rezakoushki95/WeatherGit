@@ -21,6 +21,7 @@
 		F5BF29EB2943706400DDFDBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5BF29E92943706400DDFDBD /* LaunchScreen.storyboard */; };
 		F5BF29F5294370AD00DDFDBD /* WeatherLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BF29F4294370AD00DDFDBD /* WeatherLocation.swift */; };
 		F5D14CB3296380E2007FC7E4 /* DailyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D14CB2296380E2007FC7E4 /* DailyTableViewCell.swift */; };
+		F5F949FC296E2A2D0038F54F /* UIViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F949FB296E2A2D0038F54F /* UIViewController+alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		F5BF29EC2943706400DDFDBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5BF29F4294370AD00DDFDBD /* WeatherLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherLocation.swift; sourceTree = "<group>"; };
 		F5D14CB2296380E2007FC7E4 /* DailyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTableViewCell.swift; sourceTree = "<group>"; };
+		F5F949FB296E2A2D0038F54F /* UIViewController+alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+alert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				F5BF29E22943706300DDFDBD /* LocationListViewController.swift */,
 				F5D14CB2296380E2007FC7E4 /* DailyTableViewCell.swift */,
 				F518B882296C53C000949E7C /* HourlyCollectionViewCell.swift */,
+				F5F949FB296E2A2D0038F54F /* UIViewController+alert.swift */,
 				F5BF29E42943706300DDFDBD /* Main.storyboard */,
 				F5BF29E72943706400DDFDBD /* Assets.xcassets */,
 				F5BF29E92943706400DDFDBD /* LaunchScreen.storyboard */,
@@ -234,6 +237,7 @@
 				F5BF29F5294370AD00DDFDBD /* WeatherLocation.swift in Sources */,
 				F56B911A2944CC5A00966B94 /* APIkeys.swift in Sources */,
 				F5BF29DF2943706300DDFDBD /* AppDelegate.swift in Sources */,
+				F5F949FC296E2A2D0038F54F /* UIViewController+alert.swift in Sources */,
 				F56B911C2946587B00966B94 /* LocationDetailViewController.swift in Sources */,
 				F5BF29E12943706300DDFDBD /* SceneDelegate.swift in Sources */,
 				F518B883296C53C000949E7C /* HourlyCollectionViewCell.swift in Sources */,
